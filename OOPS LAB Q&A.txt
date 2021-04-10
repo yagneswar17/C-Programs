@@ -1,0 +1,1229 @@
+OOPS Final external lab questions for CSE (section-2&4):
+
+Note: U will get any three lab programs for the exam from the given 26 programs.
+
+1.	Write a Simple Program on printing “Hello World” and “Hello Name” where name is the input from the user?
+
+#include<iostream.h>
+#include<conio.h>
+
+void main()
+{
+	clrscr();
+	char name[80];
+	cout<<"\n\t\t\t HELLO WORLD!!!"<<endl;
+	cout<<"\n Enter Name : ";
+	cin.getline(name,50);
+	cout<<"\n\t\t\t HELLO "<<name;
+	getch();
+}
+
+2.	Convert any two programs that are written in C into C++ ?
+
+/* Program to SWAP the values.	*/
+
+#include<iostream.h>
+#include<conio.h>
+
+void main()
+{
+ 	clrscr();
+ 	int a,b,temp;
+	cout<<"\n Enter first number a = ";
+ 	cin>>a;
+ 	cout<<"\n Enter second number b = ";
+ 	cin>>b;
+ 	cout<<"\n a = "<<a<<"\n b = "<<b;
+ 	temp=x;
+  	x=y;
+  	y=temp;
+	cout<<"\n The swaped values are : ";
+ 	cout<<"\n a = "<<a<<"\n b = "<<b;
+ 	getch();
+}
+
+/* Program to  calculate average of 3 numbers.	*/
+
+#include<iostream.h>
+#include<conio.h>
+
+void main()
+{
+	clrscr();
+	int a,b,c,avg;
+	cout<<"Enter Value a:";
+	cin>>a;
+	cout<<"Enter Value b:";
+	cin>>b;
+	cout<<"Enter Value c:";
+	cin>>c;
+	avg=(a+b+c)/3;
+	cout<<"Average of a, b and c is"<<avg;
+	getch();
+}
+
+3.	Write a Program that computes the simple interest and compound interest.
+
+#include<conio.h>
+#include<iostream.h>
+#include<math.h>
+
+void main()
+{
+	clrscr();
+	float p,r,t,SI,a,x,y,n,CI;
+	cout<<"\n Principal Amount = ";
+	cin>>p;
+	cout<<"\n Rate = ";
+	cin>>r;
+	cout<<"\n Time Taken = ";
+	cin>>t;
+	SI=(p*r*t)/100;
+	cout<<"\n Simple interest = "<<SI;
+	x=(1+r/100);
+	y=pow(x,t);
+	a=p*y;
+	CI=a-p;
+	cout<<"\n Compound Interest = "<<CI;
+	getch();
+}
+
+4.	Write a Program to calculate the fare for the passengers travelling in a bus. ?
+
+#include<iostream.h>
+#include<conio.h>
+
+void main()
+{
+	clrscr();
+	float dist,amount=0;
+	cout<<"\n Enter Distance (min. fare = 5): ";
+	cin>>dist;
+	if(dist<5)
+		amount=5;
+	else if(dist<10)
+		amount=dist*2;
+	else if(dist<20)
+		amount=dist*3; 
+	else if(dist<30)
+		amount=dist*4;
+	else if(dist<40)
+		amount=dist*5;
+	else
+		cout<<"\n Buses Not Available!!!";
+	if(amount!=0)
+		cout<<"\n Amount = Rs. "<<amount;
+}
+ 
+5.	Write a program to implement call by value and call by reference using reference variable. ?
+
+/* Call By Value.	*/
+
+#include<iostream.h>
+#include<conio.h>
+
+void swap(int x,int y)
+{
+  	int temp;
+  	temp=x;
+  	x=y;
+  	y=temp;
+ 	cout<<"\n In swap function : ";
+ 	cout<<"\n a = "<<a<<"\n b = "<<b;
+}
+
+void main()
+{
+ 	clrscr();
+ 	int a,b;
+ 	cout<<"\n Enter first number a = ";
+ 	cin>>a;
+ 	cout<<"\n Enter second number b = ";
+ 	cin>>b;
+	cout<<"\n a = "<<a<<"\n b = "<<b;
+ 	swap(a,b);
+ 	cout<<"\n In main function : ";
+ 	cout<<"\n a = "<<a<<"\n b = "<<b;
+ 	getch();
+}
+
+/* Call By Reference. 	*/
+
+#include<iostream.h>
+#include<conio.h>
+
+void swap(int &x,int &y)
+{
+  	int temp;
+  	temp=x;
+  	x=y;
+  	y=temp;
+ 	cout<<"\n In swap function : ";
+ 	cout<<"\n a = "<<a<<"\n b = "<<b;
+}
+
+void main()
+{
+ 	clrscr();
+ 	int a,b;
+ 	cout<<"\n Enter first number a = ";
+ 	cin>>a;
+ 	cout<<"\n Enter second number b = ";
+ 	cin>>b;
+	cout<<"\n a = "<<a<<"\n b = "<<b;
+ 	swap(a,b);
+ 	cout<<"\n In main function : ";
+ 	cout<<"\n a = "<<a<<"\n b = "<<b;
+ 	getch();
+}
+
+6.	Write a program to illustrate scope resolution, new and delete Operators. (Dynamic Memory Allocation) ?
+
+#include<iostream>
+
+using namespace std;
+
+int a=100;	//Global Variable a
+
+int main()
+{
+	int i,total,*ptr;
+	int a=10;	//Local Variable a
+	cout<<"\n a = "<<a<<"\t ::a = "<<::a<<endl;	//Displays both local and global variable
+	cout<<"\n Enter total number of students : ";
+	cin>>total;
+	ptr=new int[total];	//Dynamically allocating memory
+	cout<<"\n Enter Roll number of students : "<<endl;
+	for(i=0;i<total;i++)
+	{
+		cout<<"\n Student "<<i+1<<" : ";
+		cin>>*(ptr+i);
+	}
+	cout<<"\n Displaying Students Roll Numbers : "<<endl;
+	for(i=0;i<total;i++)
+		cout<<"\n Student "<<i+1<<" : "<<*(ptr+i)<<endl;
+	delete ptr;	//Dynamically de-allocating memory
+	return 0;
+}
+
+7.	Write a program illustrating Inline Functions? 
+
+#include<iostream.h>
+#include<conio.h>
+
+inline sum(int a,int b,int c)
+{
+	return a+b+c;
+}
+inline pro(int a,int b,int c)
+{
+	return a*b*c;
+}
+
+void main()
+{
+	clrscr();
+	int a,b,c;
+	cout<<"\n Enter 3 Numbers: ";
+	cin>>a>>b>>c;
+	cout<<"\n SUM = "<<sum(a,b,c);
+	cout<<"\n PRODUCT = "<<pro(a,b,c);
+	getch();
+}
+
+8.	Write a program illustrates function overloading. Write 2 overloading functions for power.?
+
+#include<iostream>
+#include<math.h>
+
+using namespace std;
+
+int Power(int p,int q)
+{
+	return pow(p,q);
+}
+
+float Power(float p,float q)
+{
+	return pow(p,q);
+}
+
+int main()
+{
+	int a,b;
+	float x,y;
+	cout<<"\n Enter 2 integers : ";
+	cin>>a>>b;
+	cout<<"\n Enter 2 float numbers : ";
+	cin>>x>>y;
+	cout<<"\n Integer answer : "<<Power(a,b)<<endl;
+	cout<<"\n Float no. answer : "<<Power(x,y);
+	return 0;
+}
+
+9.	Write a program illustrates the use of default arguments for simple interest function.?
+
+#include<iostream>
+
+using namespace std;
+
+float SI(int p,float r=2.5,int t=2)
+{
+	return (p*r*t)/100;
+}
+
+int main()
+{
+	int P,T;
+	float R;
+	cout<<"\n Principal Amount = ";
+	cin>>P;
+	cout<<"\n Rate = ";
+	cin>>R;
+	cout<<"\n Time Taken = ";
+	cin>>T;
+	cout<<"\n Using Default Values : "<<endl;
+	cout<<"\n Simple interest = "<<SI(P)<<endl;
+	cout<<"\n Without Using Default Values : "<<endl;
+	cout<<"\n Simple interest = "<<SI(P,R,T)<<endl;
+	return 0;
+}
+
+10.	Write a program for illustrating Access Specifiers public, private, protected ?
+
+#include<iostream.h>
+#include<conio.h>
+
+class Access
+{
+ private:
+	int a;
+	void get1()
+	{
+		cout<<"\n Enter a : ";
+		cin>>a;
+	}
+ protected:
+	int b;
+	void get2()
+	{
+		cout<<"\n Enter b : ";
+		cin>>b;
+	}
+ public:
+	int c;
+	void get3()
+	{
+		get1();		   // Private members   Accessable by member function
+		get2();              // Protected members Accessable by member function
+		cout<<"\n Enter c : ";
+		cin>>c;
+	}
+	void SUM()
+	{
+		cout<<"\n Sum = "<<a+b+c;
+	}
+};
+
+void main()
+{
+	clrscr();
+	Access obj;
+   //	obj.get1();     Not Accessable (Private declaration)
+   //	obj.get2();     Not Accessable (Protected declaration)
+	obj.get3();     //  Accessable (Public declaration)
+	obj.SUM();
+	getch();
+}
+
+11.	Write a program implementing Friend Function? 
+
+#include<iostream.h>
+#include<conio.h>
+
+class B;
+class A
+{
+ private:
+	int a;
+ public:
+	void get1()
+	{	
+		cout<<"\n Enter a : ";
+		cin>>a;
+	}
+	friend void oper(A,B);
+};
+
+class B
+{
+ private:
+	int b;
+ public:
+	void get2()
+	{
+		cout<<"\n Enter b : ";
+		cin>>b;
+	}
+	friend void oper(A,B);
+};
+
+void oper(A o1,B o2)
+{
+	cout<<"\n Sum        = "<<o1.a+o2.b;
+	cout<<"\n Difference = "<<o1.a-o2.b;
+	cout<<"\n Product    = "<<o1.a*o2.b;
+}
+
+void main()
+{
+	clrscr();
+	A obj1;
+	B obj2;
+	obj1.get1();
+	obj2.get2();
+	oper(obj1,obj2);
+	getch();
+}
+
+12.	Write a program to illustrate this pointer ? 
+
+#include<iostream>
+
+using namespace std;
+
+class Sample
+{
+		int x;
+	public:
+		void get(int x)
+		{
+			this->x=x;
+		}
+		void display()
+		{
+			cout<<"\n x = "<<x;
+		}
+};
+
+int main()
+{
+	Sample obj;
+	int n;
+	cout<<"\n Enter num : ";
+	cin>>n;
+	obj.get(n);
+	obj.display();	
+	return 0;
+}
+
+13.	Write a program to Overload Unary as Member Function, and Non Member Function.
+
+#include<iostream>
+
+using namespace std;
+
+class UMF
+{
+		int x,y;
+	public:
+		void get()
+		{
+			cout<<"\n Enter x : ";
+			cin>>x;
+			cout<<"\n Enter y : ";
+			cin>>y;
+		}
+		void display()
+		{
+			cout<<"\n X = "<<x<<"\t Y = "<<y;
+		}
+		void operator ++();		
+		friend void operator --(UMF);
+};
+
+void UMF::operator ++() 	//Member Function
+{
+	++x;
+	++y;
+}
+
+void operator --(UMF a)		//Non Member Function
+{
+	--a.x;
+	--a.y;
+	a.display();
+}
+
+int main()
+{
+	UMF obj1,obj2;
+	cout<<"\n Enter object 1 details : "<<endl;
+	obj1.get();
+	cout<<"\n Enter object 2 details : "<<endl;
+	obj2.get();
+	cout<<"\n Performing Decrement operation on object 1 : ";
+	--obj1;
+	cout<<"\n Final object 1 output : "<<endl;
+	obj1.display();
+	cout<<"\n Performing Increment operation on object 2 : ";
+	++obj2;
+	cout<<"\n Final object 2 output : "<<endl;
+	return 0;
+}
+
+14.	Write a program to Overload Binary Operators as Member Function, and Non Member Function.?
+
+#include<iostream>
+
+using namespace std;
+
+class UMF
+{
+		int x,y;
+	public:
+		void get()
+		{
+			cout<<"\n Enter x : ";
+			cin>>x;
+			cout<<"\n Enter y : ";
+			cin>>y;
+		}
+		void display()
+		{
+			cout<<"\n X = "<<x<<"\t Y = "<<y<<endl;
+		}
+		UMF operator +(UMF);
+		friend UMF operator *(UMF,UMF);
+};
+
+UMF UMF::operator +(UMF tobj)	//Member Function
+{
+	UMF temp;
+	temp.x=x+tobj.x;
+	temp.y=y+tobj.y;
+	return temp;
+}
+
+UMF operator *(UMF a,UMF b)	//Non-Member Function
+{
+	UMF temp;
+	temp.x=a.x*b.x;
+	temp.y=a.y*b.y;
+	return temp;
+}
+
+int main()
+{
+	UMF obj1,obj2,obj3,obj4;
+	cout<<"\n Enter object 1 details : "<<endl;
+	obj1.get();
+	cout<<"\n Enter object 2 details : "<<endl;
+	obj2.get();
+	cout<<"\n Object 1 output : "<<endl;
+	obj1.display();
+	cout<<"\n Object 2 output : "<<endl;
+	obj2.display();
+	cout<<"\n Performing object 3 = object 1 + object 2 : ";
+	obj3=obj1+obj2;
+	cout<<"\n Object 3 output : "<<endl;
+	obj3.display();
+	cout<<"\n Performing object 4 = object 1 * object 2 : ";
+	obj4=obj2*obj1;
+	cout<<"\n Object 4 output : "<<endl;
+	obj4.display();
+	return 0;
+}
+
+15.	Write a c ++ program to implement the overloading assignment = operator 
+
+#include<iostream>
+
+using namespace std;
+
+class assign
+{
+		int num;
+	public:
+		void get()
+		{
+			cout<<"\n Enter Num : ";
+			cin>>num;
+		}
+		void display()
+		{
+			cout<<"\n Num = "<<num<<endl;
+		}
+		void operator = (assign x)
+		{
+			num=x.num;
+		}
+};
+
+int main()
+{
+	assign obj1,obj2;
+	cout<<"\n Enter object 1 details :";
+	obj1.get();
+	cout<<"\n Enter object 2 details :";
+	obj2.get();
+	cout<<"\n Before operation : "<<endl;
+	obj1.display();
+	obj2.display();
+	obj2=obj1;
+	cout<<"\n After operation : "<<endl;
+	obj1.display();
+	obj2.display();
+	return 0;
+}
+
+16.	Write C++ Programs and incorporating various forms of Inheritance 
+i)	Hybrid inheritance ii) Single Inheritance
+
+/* HYBRID INHERITANCE.	*/
+
+#include<iostream>
+
+using namespace std;
+
+class Base1
+{
+	protected:
+		int num1;
+};
+
+class Base2
+{
+	protected:
+		int num2;
+};
+
+class Derived1: protected Base1
+{
+	protected:
+		int num3;
+};
+
+class Derived2: public Base2
+{
+	protected:
+		int num4;
+};
+
+class Final: public Derived1,private Derived2
+{
+	protected:
+		int num5;
+		int sum;
+	public:
+		void getdata();
+		void display();	
+};
+
+void Final::getdata()
+{
+	cout<<"\n Enter 5 numbers : ";
+	cin>>num1>>num2>>num3>>num4>>num5;
+	sum=num1+num2+num3+num4+num5;
+}
+
+void Final::display()
+{
+	cout<<"\n Sum = "<<sum;
+}
+
+int main()
+{
+	Final obj;
+	obj.getdata();
+	obj.display();
+	return 0;
+}
+
+/* SINGLE INHERITANCE.	*/
+
+#include<iostream>
+
+using namespace std;
+
+class Base
+{
+	protected:
+		int a;
+};
+class Derived:public Base
+{
+	private:
+		int b;
+	public:
+		void getdata();
+		void display();
+};
+void Derived::getdata()
+{
+	cout<<"\n Enter a & b : ";
+	cin>>a>>b;
+}
+void Derived::display()
+{
+	cout<<"\n a = "<<a<<"\t b = "<<b<<endl;
+}
+int main()
+{
+	Derived obj;
+	obj.getdata();
+	obj.display();
+	return 0;
+}
+
+17.	Write C++ Programs and incorporating various forms of Inheritance 
+i)	Multiple Inheritances ii) Multi-level inheritance
+
+/* Multiple Inheritance */
+
+#include<iostream>
+
+using namespace std;
+
+class Base1
+{
+	protected:
+		int num1;
+};
+
+class Base2
+{
+	protected:
+		int num2;
+};
+
+class Derived: protected Base1, public Base2
+{
+	protected:
+		int num3;
+		int sum;
+	public:
+		void getdata();
+		void display();
+};
+
+void Derived::getdata()
+{
+	cout<<"\n Enter 3 numbers : ";
+	cin>>num1>>num2>>num3;
+	sum=num1+num2+num3;
+}
+
+void Derived::display()
+{
+	cout<<"\n Sum of "<<num1<<", "<<num2<<" and "<<num3<<" is "<<sum;
+}
+
+int main()
+{
+	Derived obj;
+	obj.getdata();
+	obj.display();
+	return 0;
+}
+
+/* Multi-Level Inheritance.	*/
+
+#include<iostream>
+
+using namespace std;
+
+class Base
+{
+	protected:
+		int num1;
+		float avg;
+	public:
+		Base()
+		{
+			cout<<"\n Base class Constructor Invoked!!!";
+		}
+};
+
+class Intermediate:public Base
+{
+	protected:
+		int num2;
+};
+
+class Derived: protected Intermediate
+{
+	protected:
+		int num3;
+	public:
+		void getdata();
+		void display();
+};
+
+void Derived::getdata()
+{
+	cout<<"\n Enter 3 numbers : ";
+	cin>>num1>>num2>>num3;
+	avg=(num1+num2+num3)/3;
+}
+
+void Derived::display()
+{
+	cout<<"\n Average of "<<num1<<", "<<num2<<" and "<<num3<<" is "<<avg;
+}
+
+int main()
+{
+	Derived obj;
+	obj.getdata();
+	obj.display();
+	return 0;
+}
+
+18.	Write C++ Programs and incorporating various forms of Inheritance 
+i)	Hierarchical Inheritance ii) Multiple Inheritances ?
+
+/* Hierarchical Inheritance.	*/
+
+#include<iostream>
+
+using namespace std;
+
+class Base
+{
+	protected:
+		int num1;
+		float avg;
+};
+
+class Derived1:public Base
+{
+	public:
+		int num2;
+		void get()
+		{
+			cout<<"\n Enter num1 : ";
+			cin>>num1;
+			cout<<"\n Enter num2 : ";
+			cin>>num2;
+		}
+		void display()
+		{
+			cout<<"\n"<<num1<<" + "<<num2<<" = "<<num1+num2;
+		}
+};
+
+class Derived2: protected Base
+{
+	protected:
+		int num3;
+	public:
+		void getdata()
+		{
+			cout<<"\n Enter num1 : ";
+			cin>>num1;
+			cout<<"\n Enter num3 : ";
+			cin>>num3;
+		}
+		void putdata()
+		{
+			cout<<"\n"<<num1<<" + "<<num3<<" = "<<num1+num3;
+		}
+};
+
+int main()
+{
+	Derived1 obj1;
+	Derived2 obj2;
+	obj1.get();
+	obj2.getdata();
+	obj1.display();
+	obj2.putdata();
+	return 0;
+	
+	
+}
+
+/* Multiple Inheritance.	*/
+
+#include<iostream>
+
+using namespace std;
+
+class Base1
+{
+	protected:
+		int num1;
+};
+
+class Base2
+{
+	protected:
+		int num2;
+};
+
+class Derived: protected Base1, public Base2
+{
+	protected:
+		int num3;
+		int sum;
+	public:
+		void getdata();
+		void display();
+};
+
+void Derived::getdata()
+{
+	cout<<"\n Enter 3 numbers : ";
+	cin>>num1>>num2>>num3;
+	sum=num1+num2+num3;
+}
+
+void Derived::display()
+{
+	cout<<"\n Sum of "<<num1<<", "<<num2<<" and "<<num3<<" is "<<sum;
+}
+
+int main()
+{
+	Derived obj;
+	obj.getdata();
+	obj.display();
+	return 0;
+}
+
+19.	Write a Program in C++ to illustrate the order of execution of constructors and destructors in inheritance ?
+
+#include<iostream>
+
+using namespace std;
+
+class Base1
+{
+	protected:
+		int a;
+	public:
+		Base1()
+		{
+			cout<<"\n Base1 constructor invoked!!! ";
+		}
+		~Base1()
+		{
+			cout<<"\n Base1 destructor invoked!!! ";
+		}
+};
+class Base2
+{
+	public:
+		int b;
+		Base2()
+		{
+			cout<<"\n Base2 constructor invoked!!! ";
+		}
+		~Base2()
+		{
+			cout<<"\n Base2 destructor invoked!!! ";
+		}
+};
+class Derived: public Base1,protected Base2
+{
+		int c;
+	public:
+		Derived()
+		{
+			cout<<"\n Derived constructor invoked!!! ";
+		}
+		~Derived()
+		{
+			cout<<"\n Derived destructor invoked!!! ";
+		}
+		void get()
+		{
+			cout<<"\n Enter 3 numbers : ";
+			cin>>a>>b>>c;
+		}
+		void display()
+		{
+			cout<<"\n Sum = "<<a+b+c;
+		}
+};
+int main()
+{
+	Derived obj;
+	obj.get();
+	obj.display();
+	return 0;
+}
+
+20.	Write a program to illustrate runtime polymorphism  ?
+
+#include<iostream>
+
+using namespace std;
+
+float add(float a,float b)
+{
+	return a+b;
+}
+
+float sub(float a,float b)
+{
+	return a-b;
+}
+
+float mul(float a,float b)
+{
+	return a*b;
+}
+
+int main()
+{
+	int cho;
+	float x,y;
+	cout<<"\n Enter 2 Numbers : ";
+	cin>>x>>y;
+	cout<<"\n Enter choice :- (1=add, 2=difference, 3=product) : ";
+	cin>>cho;
+	float (*ptr)(float,float);	//Function pointer is created
+	switch(cho)
+	{
+		case 1:
+			ptr=add;
+			break;
+		case 2:
+			ptr=sub;
+			break;
+		case 3:
+			ptr=mul;
+			break;
+		default: cout<<"\n Invalid Choice!!!";
+	}
+	cout<<"\n Result = "<<ptr(x,y);
+	return 0;
+}
+
+21.	Write a program illustrates pure virtual function and calculate the area of different shapes by using abstract class. ?
+
+#include<iostream>
+
+#define PI 3.14
+
+using namespace std;
+
+class Area		// Abstract Class
+{
+	protected:
+		int l,b,h,opt;
+		float area;
+	public:
+   		virtual void result() = 0;	//Pure Virtual Function
+};
+class Calculate: public Area
+{
+	public:
+		void get();
+		void CalArea(); 
+   		void result() 
+		{
+      		cout<<"\n Area = "<<area;
+   		}
+};
+
+void Calculate::get()
+{
+	cout<<"\n Enter choice : (1=Triangle, 2=Square, 3=Rectangle, 4=Circle) : ";
+	cin>>opt;
+}
+void Calculate::CalArea()
+{
+   		{
+      		switch(opt)
+      		{
+      			case 1:
+      				cout<<"\n Enter Base : ";
+      				cin>>b;
+      				cout<<"\n Enter Height : ";
+      				cin>>h;
+				  	area=0.5*b*h;
+				 	break;
+				case 2:
+					cout<<"\n Enter Length : ";
+      				cin>>l;
+					area=l*l;
+					break;
+				case 3:
+					cout<<"\n Enter Length : ";
+      				cin>>l;
+      				cout<<"\n Enter Width : ";
+      				cin>>b;
+					area=l*b;
+					break;
+				case 4:
+					cout<<"\n Enter Radius : ";
+      				cin>>l;
+					area=PI*l*l;
+					break;
+				default:
+					cout<<"\n Invalid Choice!!!";	
+			}
+   		}
+}
+int main()
+{
+   Calculate obj;
+   obj.get();
+   obj.CalArea();
+   obj.result();
+   return 0;
+}
+
+22.	Write a C++ Program to illustrate template class ?
+
+#include<iostream>
+using namespace std;
+
+template <class T>
+
+int factorial(T n)
+{
+    if(n > 1)
+        return n * factorial(n - 1);
+    else
+        return 1;
+}
+
+int main()
+{
+    int n;
+    cout<<"\n Enter a positive integer : ";
+    cin>>n;
+    cout<<"\n Factorial of "<<n<<" = "<<factorial(n);
+    return 0;
+}
+
+23.	Write a Program to illustrate class templates with multiple parameters ?
+
+#include<iostream> 
+using namespace std; 
+
+template<class T1, class T2> 
+
+class Test 
+{ 
+		T1 a; 
+		T2 b; 
+	public: 
+		Test(T1 x, T2 y) 
+		{ 
+			a = x; 
+			b = y; 
+		} 
+		void show() 
+		{ 
+			cout << a << " and " << b << endl; 
+		} 
+}; 
+ 
+int main() 
+{ 
+	int w,x;
+	float y;
+	char z;
+	cout<<"\n Enter Float and Integer Value : ";
+	cin>>y>>x;
+	cout<<"\n Enter Integer and Character Value : ";
+	cin>>w>>z;
+	Test <float, int> test1 (x,y);  
+	Test <int, char> test2 (w,z); 
+	test1.show(); 
+	test2.show(); 
+	return 0; 
+} 
+
+24.	Write a Program to illustrate member function templates ?
+
+#include<iostream>
+
+using namespace std;
+
+template<class T>
+
+class data
+{
+	public:
+		data (T c);
+};
+
+template<class T> data<T>::data (T c)
+{
+	cout<<"\n c = "<<c;
+}
+
+int main()
+{
+	data <char> h('A');
+	data <int>  i(1020);
+	data <float> j(4.235);
+	return 0;
+}
+
+25.	Write a Program to implement List and List Operations.?
+
+#include<iostream>
+#include<list>
+using namespace std;
+
+void display(list <int> &num)
+{
+	list<int>::iterator n;
+	for(n=num.begin();n!=num.end();++n)
+		cout<<*n<<" ";
+}
+
+int main()
+{
+	list <int> list;
+	int a;
+	char ch='y';
+	do
+	{
+		cout<<"\n Enter Number : ";
+		cin>>a;
+		list.push_back(a);
+		cout<<"Want to enter more elements (Y/N): ";
+		cin>>ch;
+	}while(ch=='y'||ch=='Y');
+	cout<<"\n Original List : ";
+	display(list);
+	cout<<"\n    Final List : ";
+	list.sort();
+	display(list);
+	return 0;
+}
+
+26.	Write a Program to implement Vector and Vector Operations.?
+
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+int main()
+{
+	vector<int> num;
+	int n,i,ele;
+	cout<<"\n How many elements do you want to add in a vector? :";
+	cin>>n;
+	cout<<"\n Enter elements : "<<endl;
+	for(i=0;i<n;i++)
+	{
+		cin>>ele;
+		num.push_back(ele);
+	}
+	cout<<"\n The elements are : "<<endl;
+	for(i=0;i<n;i++)
+	{
+		cout<<" \t"<<num[i];
+	}
+	return 0;
+}
