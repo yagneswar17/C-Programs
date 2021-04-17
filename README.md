@@ -4,7 +4,7 @@
 
 #### 2 Pdf's: Theoretical Concepts of Object Oriented Programming
 [Basic Definations](https://github.com/yagneswar17/C-Programs/blob/main/Basic%20Definitions.pdf)
-[Diagrammatic Representation] (https://github.com/yagneswar17/C-Programs/blob/main/Diagrammatic%20Representation.pdf)
+[Diagrammatic Representation](https://github.com/yagneswar17/C-Programs/blob/main/Diagrammatic%20Representation.pdf)
 
 #### 1 Pdf for Basic Programming Important Questions:
 
