@@ -3,8 +3,8 @@
 ### This Repository contains:-
 
 #### 2 Pdf's: Theoretical Concepts of Object Oriented Programming
-[Basic Definations](https://github.com/yagneswar17/C-Programs/blob/main/Basic%20Definitions.pdf)
-[Diagrammatic Representation](https://github.com/yagneswar17/C-Programs/blob/main/Diagrammatic%20Representation.pdf)
+1. [Basic Definations](https://github.com/yagneswar17/C-Programs/blob/main/Basic%20Definitions.pdf) 
+2. [Diagrammatic Representation](https://github.com/yagneswar17/C-Programs/blob/main/Diagrammatic%20Representation.pdf)
 
 #### 1 Pdf for Basic Programming Important Questions:
 
